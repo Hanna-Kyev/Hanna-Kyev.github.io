@@ -1,0 +1,58 @@
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0);
+    z-index: 99999;
+    transition: all 2s ease-out;
+    transition-delay: 0.2s;
+    pointer-events: none;
+  }
+  
+  .modal .dialog {
+    width: 500px;
+    position: relative;
+    top: -1000px;
+    margin: 10% auto;
+    padding: 5px 20px 13px 20px;
+    border-radius: 10px;
+    background: linear-gradient(#fff, #ccc) #fff;
+    box-shadow: 0 0 10px #000;
+  }
+  
+  .modal:target {
+    display: block;
+    pointer-events: auto;
+    background: rgba(4, 10, 30, 0.8);
+    transition: all 0.5s ease-out;
+  }
+  
+  .modal:target .dialog {
+    top: -20px;
+    transition: all 0.8s ease-out;
+    transition-delay: 0.4s;
+  }
+  
+  .close {
+    background: #606061;
+    color: #FFFFFF;
+    line-height: 25px;
+    position: absolute;
+    right: -12px;
+    text-align: center;
+    top: -10px;
+    width: 24px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 12px;
+    box-shadow: 0 0 10px #000;
+    transition: all 0.5s ease-out;
+    transition-delay: 0.2s;
+  }
+  
+  .close:hover {
+    background: #00d9ff;
+    transition: all 0.5s ease-out;
+  }

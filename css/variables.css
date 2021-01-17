@@ -1,0 +1,86 @@
+
+@import "https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,900;1,300;1,400;1,700&display=swap"; 
+@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css";
+
+:root{
+       /* dark shades of primary color*/
+   --clr-primary-1: hsl(205, 86%, 17%);
+   --clr-primary-2: hsl(205, 77%, 27%);
+   --clr-primary-3: hsl(205, 72%, 37%);
+   --clr-primary-4: hsl(206, 60%, 80%);
+   /* primary/main color */
+   --clr-primary-5: hsla(237, 18%, 75%, 0.938);
+   --clr-primary-6: hsla(205, 38%, 82%, 0.918);
+    /* color violet and other */
+   --clr-primary-7: hsla(287, 35%, 90%, 0.815);
+   --clr-primary-8: hsla(118, 51%, 38%, 0.959);
+   --clr-primary-9: hsl(66, 83%, 68%);
+   --clr-primary-10: hsl(173, 25%, 94%);
+   --clr-primary-11: hsla(175, 21%, 79%, 0.678);
+    /* color black and other */
+    --clr-primary-12: hsla(286, 87%, 3%, 0.959);
+    --clr-primary-13: hsla(288, 44%, 13%, 0.322);
+    --clr-primary-14: hsl(192, 32%, 24%);
+    --clr-primary-15: hsl(0, 1%, 35%);
+    --clr-primary-16: hsl(192, 37%, 50%);
+    --clr-primary-17: hsla(192, 56%, 70%, 0.74);
+    /* darkest grey - used for headings */
+    --clr-grey-1: hsl(209, 61%, 16%);
+    --clr-grey-2: hsl(211, 39%, 23%);
+    --clr-grey-3: hsl(209, 34%, 30%);
+    --clr-grey-4: hsl(209, 28%, 39%);
+    /* grey used for paragraphs */
+    --clr-grey-5: hsl(210, 22%, 49%);
+    --clr-grey-6: hsl(209, 23%, 60%);
+    --clr-grey-7: hsl(211, 27%, 70%);
+    --clr-grey-8: hsl(210, 31%, 80%);
+    --clr-grey-9: hsl(213, 61%, 78%);
+    --clr-grey-10: hsla(206, 18%, 85%, 0.877);
+    --clr-grey-11: rgba(65, 29, 90, 0.87);
+    --clr-white: #fff;
+    --clr-red-dark: rgb(126, 32, 32);
+    --clr-red-light: rgb(226, 131, 131);
+    --clr-green-dark: hsl(125, 67%, 44%);
+    --clr-green-light: hsl(125, 71%, 66%);
+    --clr-black-1: #222;
+    --clr-black-2: rgb(24, 6, 6);
+    --clr-secondary: hsla(182, 63%, 54%);
+    --clr-primary: hsla(50, 83%, 54%);
+    
+    --ff-primary: "Roboto", sans-serif;
+    --ff-secondary: "Open Sans", sans-serif;
+    --transition: all 0.3s linear;
+    --spacing: 0.01rem;
+    --radius: 0.25rem;
+    
+    --light-shadow: 0 5px 15px rgba(85, 83, 83, 0.1);
+    --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    --max-width: 1170px;
+    --fixed-width: 620px;
+    --font-size--small: calc((14/16) * 1rem); /* 14px */
+    --font-size--default: calc((16/16) * 1rem); /* 16px */
+    --font-size--large: calc((24/16) * 1rem); /* 24px */
+
+    /* Typography | Global */
+    /* body font size */
+    --text-base-size: 1em;
+
+    /* type scale */
+    --text-scale-ratio: 1.2;
+    --text-xs: calc((1em / var(--text-scale-ratio)) / var(--text-scale-ratio));
+    --text-sm: calc(var(--text-xs) * var(--text-scale-ratio));
+    --text-md: calc(var(--text-sm) * var(--text-scale-ratio) * var(--text-scale-ratio));
+    --text-lg: calc(var(--text-md) * var(--text-scale-ratio));
+    --text-xl: calc(var(--text-lg) * var(--text-scale-ratio));
+    --text-xxl: calc(var(--text-xl) * var(--text-scale-ratio));
+}
+
+
+@media (min-width: 64rem) {
+    :root {
+      --text-base-size: 1.25em;
+      --text-scale-ratio: 1.25;
+    }
+  }
+  
+

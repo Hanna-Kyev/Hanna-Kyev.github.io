@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Spider BookStore</title>
+        <link rel="icon" href="favicon.ico">
+        <link href="css/variables.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+        <link href="css/flexible.css" rel="stylesheet">
+        <link href="css/aside.css" rel="stylesheet"> 
+        <link href="css/navbar.css" rel="stylesheet">
+        <link href="css/gradient.css" rel="stylesheet">        
+        <link href="css/books.css" rel="stylesheet">
+        <link href="css/effects.css" rel="stylesheet">
+        <link href="css/transform.css" rel="stylesheet">
+        <link href="css/forms.css" rel="stylesheet">
+        <link href="css/modal.css" rel="stylesheet">
+        <link href="css/grid.css" rel="stylesheet">           
+    </head>
+    <body>  
+         <!-- nav -->
+    <header class="bg-light">
+        <nav id="nav">
+            <div class="nav-center">
+                <div class="nav-header">
+                    <a class="navbar-brand" href="index.html"><span class="font-weight-bold text-uppercase text-dark logo">Spider BookStore</span></a>
+                </div>
+                <input class="trigger" type="checkbox" id="hamburger">
+                <div class="navbar-links effect-brackets">
+                    <ul class="navbar-nav">
+                        <li>
+                            <a href="index.html" class="nav-link">Home</a>
+                        </li>
+                        <li>
+                            <a href="BookStore.html" class="nav-link">BookStore</a>
+                        </li>
+                        <li>
+                            <a href="Reviews.html" class="nav-link">Reviews</a>
+                        </li>
+                        <li>
+                            <a href="Contacts.html" class="nav-link">Contacts</a>
+                        </li>
+                    </ul>
+                </div>                
+                <ul class="navbar-tool effect-ease">
+                    <li>
+                        <a class="sidebar-toggle" href="#"> <i class="fas fa-dolly-flatbed text-gray"></i><small class="text-gray count-items-in-cart"></small></a>
+                    </li>
+                    <li>
+                        <a class="wish-toggle" href="#"> <i class="far fa-heart"></i><small class="text-gray count-wish-items" id="list-Desires"></small></a>
+                    </li>
+                    <li>
+                        <a class="" href="#login"> <i class="fas fa-user-alt text-gray"></i></a>
+                    </li>
+                </ul>
+                <label for="hamburger">
+                    <i class="nav-toggle fas fa-bars"></i>
+                </label>                
+            </div>
+          </nav>
+    </header>
+        <!-- aside -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <button class="close-btn"><i class="fas fa-times"></i></button>
+            <h5 class="logo">Your Shopping Cart</h5>
+        </div>
+        <div class="cart-items">
+            <div class="cart-item">
+                <div class="picture product-img">
+                    <img src="./book images/20.jpg" alt="book 20" class="img-fluid w=100">
+                </div>
+                <div class="product-name">Clifford Simak</div>
+                <div class="remove-btn text-right">
+                <a href="#" class="reset-anchor m-auto"><i class="fas fa-trash-alt"></i></a>
+                </div>
+                <div class="quantity">
+                    <div class="border d-flex justify-content-around mx-auto">
+                        <i class="fas fa-caret-left"></i>
+                            <span class="border-1 p-1 amount">1</span>
+                        <i class="fas fa-caret-right"></i>
+                    </div>
+                </div>
+                <div class="price">
+                &#8372 <spa class="product-price">177</spa>
+                </div>
+                <div class="cart-footer">
+                    <h3>your total : &#8372<span class="cart-total">0</span></h3>
+                    <button class="clear-cart">Clear All</button>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <aside class="wish">
+        <div class="wish-header">
+            <button class="closen-btn"><i class="fas fa-times"></i></button>
+            <h5 class="logo"><i class="fas fa-heart"></i> Your List Desires</h5>
+        </div>
+        <div class="wish-items">
+            <div class="wish-item">
+                <div class="picture product-img">
+                    <img src="./book images/22.jpg" alt="book 22" class="img-fluid w=100">
+                </div>
+                <div class="product-name">Stephen King</div>
+                <div class="add-btn text-right">            
+                    <a href="#" class="reset-anchor m-auto"><i class="fas fa-cart-plus"></i></a>
+                </div>
+                <div class="quantity">
+                    <div class="border d-flex justify-content-around mx-auto">
+                        <i class="fas fa-caret-left"></i>
+                            <span class="border-1 p-1 amount">1</span>
+                        <i class="fas fa-caret-right"></i>
+                    </div>
+                </div>
+                <div class="price">
+                &#8372 <spa class="product-price">149</spa>
+                </div>
+                <div class="wish-footer">
+                    <h3>your total : <span class="wish-total">0</span></h3>
+                    <a class="btn btn-sm btn-dark add-to-cart" href="#">Buy all books</a>
+                    <button class="wish-clear">Clear All</button> 
+                </div> 
+            </div>
+        </div>
+    </aside>
+        <!-- slider -->   
+        <div class="container color">
+        <!-- HERO SECTION--> 
+                 
+            <section class="hero pb-3 d-flex align-items-center">
+                <article class="container"> 
+                    <div class="row px-4 px-lg-5">
+                    <div class="col-lg-6">
+                        <p class="text-muted small text-uppercase mb-2">Literature is a great achievement of humanity</p>
+                        <h1 class="h2 text-uppercase mb-3">CREATE YOUR COLLECTION</h1>
+                        <a href="#" class="btn btn-browse"><span>Make your choice</span></a> 
+                    </div>                                          
+                    </div>
+                </article>
+            </section>
+                 
+        <!-- showcase -->
+            <section class="py-5">
+            <div class="row">
+                <!-- sidebar -->
+                <div class="col-lg-3">
+                    <h4 class="text-uppercase mb-4">BROWSE BOOK CATEGORIES</h4>
+                    <div class="py-2 px-4 bg-dark text-white mb-3">
+                        <strong class="small text-uppercase">Classic</strong>
+                    </div>
+                    <ul class="list-unstyled  small pl-4">
+                        <li class="mb-2"><a class="reset-anchor" href="#">Ukrainian classics</a></li>
+                        <li class="mb-2"><a class="reset-anchor" href="#">English classics</a></li>
+                        <li class="mb-2"><a class="reset-anchor" href="#">Russian classics</a></li>
+                        <li class="mb-2"><a class="reset-anchor" href="#">French classics</a></li>
+                    </ul>
+                    <div class="py-2 px-4 bg-dark text-white mb-3">
+                        <strong class="small text-uppercase">POPULAR</strong>
+                    </div>
+                    <ul class="list-unstyled small pl-4">
+                        <li class="mb-2"><a class="reset-anchor" href="#">Thrillers</a></li>
+                        <li class="mb-2"><a class="reset-anchor" href="#">Detectives</a></li>
+                        <li class="mb-2"><a class="reset-anchor" href="#">Horror</a></li>
+                        <li class="mb-2"><a class="reset-anchor" href="#">Fantasy</a></li>
+                    </ul>
+                    <div class="py-2 px-4 bg-dark text-white mb-3">
+                    <strong class="small text-uppercase">SELF-EDUCATION</strong>
+                    </div>
+                    <ul class="list-unstyled small pl-4">
+                        <li class="mb-2"><a class="reset-anchor" href="#">Motivating</a></li>
+                        <li class="mb-2"><a class="reset-anchor" href="#">Education</a></li>
+                        <li class="mb-2"><a class="reset-anchor" href="#">Laws</a></li>
+                        <li class="mb-2"><a class="reset-anchor" href="#">Cognetive</a></li>
+                    </ul>      
+                </div>
+                 <!-- main section -->
+                <div class="col-lg-9 mb-5">
+                    <div class="row mb-3 align-items-center">
+                        <div class="col-lg-6 mb-2">
+                            <p class="text-muted mb-0">Show 1 - 6 of 54 results</p>
+                        </div>
+                        <div class="col-lg-6">
+                            <ul class="list-inline d-flex align-items-center justify-content-end mb-0">
+                                <li class="list-inline-item mr-3"><a class="reset-anhor p-0" href="#"><i class="fas fa-th-large"></i></a></li>
+                                <li class="list-inline-item mr-3"><a class="reset-anhor p-0" href="#"><i class="fas fa-th"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="product text-center">
+                                <div class="position-relative mb-3">
+                                    <a class="d-block" href="#"><img src="./book images/38.jpg" class="img-fluid w-100" alt="popular"></a>                       
+                                    <div class="product-overlay">
+                                        <ul class="mb-0 list-inline">
+                                            <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-outline-dark choose" href="#"><i class="fab fa-gratipay"></i></a></li>
+                                            <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-dark add-to-cart" href="#">Buy book</a></li>
+                                            <li class="list-inline-item mr-0"><a class="btn btn-sm btn-outline-dark" href="#"><i class="fas fa-book-reader"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>    
+                                <section>
+                                <h3><a class="reset-anchor product-name" href="#">Stephen Hawking</a></h3>
+                                &#8372<span class="small text-muted product-price">333</span>
+                                </section>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="product text-center">
+                                <div class="position-relative mb-3">
+                                    <a class="d-block" href="#"><img src="./book images/3.jpg" class="img-fluid w-100" alt="education"></a>                            
+                                    <div class="product-overlay">
+                                        <ul class="mb-0 list-inline">
+                                            <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-outline-dark choose" href="#"><i class="fab fa-gratipay"></i></a></li>
+                                            <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-dark add-to-cart" href="#">Buy book</a></li>
+                                            <li class="list-inline-item mr-0"><a class="btn btn-sm btn-outline-dark" href="#"><i class="fas fa-book-reader"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <section>
+                                <h3><a class="reset-anchor product-name" href="#">Dictionary Оxford</a></h3>
+                                &#8372 <span class="small text-muted product-price">499</span>
+                                </section>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="product text-center">
+                                <div class="position-relative mb-3">
+                                    <a class="d-block" href="#"><img src="./book images/7.jpg" class="img-fluid w-100" alt="novelties"></a>
+                                    <div class="product-overlay">
+                                        <ul class="mb-0 list-inline">
+                                            <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-outline-dark choose" href="#"><i class="fab fa-gratipay"></i></a></li>
+                                            <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-dark add-to-cart" href="#">Buy book</a></li>
+                                            <li class="list-inline-item mr-0"><a class="btn btn-sm btn-outline-dark" href="#"><i class="fas fa-book-reader"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <section>
+                                <h3><a class="reset-anchor product-name" href="#">James Joyce</a></h3>
+                                &#8372<span class="small text-muted product-price">799</span>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="product text-center">
+                                <div class="position-relative mb-3">
+                                    <a class="d-block" href="#"><img src="./book images/19.jpg" class="img-fluid w-100" alt="sf"></a>
+                                    <div class="product-overlay">
+                                        <ul class="mb-0 list-inline">
+                                            <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-outline-dark choose" href="#"><i class="fab fa-gratipay"></i></a></li>
+                                            <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-dark add-to-cart" href="#">Buy book</a></li>
+                                            <li class="list-inline-item mr-0"><a class="btn btn-sm btn-outline-dark" href="#"><i class="fas fa-book-reader"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            <section>
+                            <h3><a class="reset-anchor product-name" href="#">Clifford Simak</a></h3>
+                            &#8372<span class="small text-muted product-price">310</span>
+                            </section>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="product text-center">
+                                <div class="position-relative mb-3">
+                                    <a class="d-block" href="#"><img src="./book images/28.jpg" class="img-fluid w-100" alt="novelties"></a>
+                                    <div class="product-overlay">
+                                        <ul class="mb-0 list-inline">
+                                            <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-outline-dark choose" href="#"><i class="fab fa-gratipay"></i></a></li>
+                                            <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-dark add-to-cart" href="#">Buy book</a></li>
+                                            <li class="list-inline-item mr-0"><a class="btn btn-sm btn-outline-dark" href="#"><i class="fas fa-book-reader"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            <section>
+                            <h3><a class="reset-anchor product-name" href="#">Sergei Minaev</a></h3>
+                            &#8372<span class="small text-muted product-price">500</span>
+                            </section>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="product text-center">
+                                <div class="position-relative mb-3">
+                                    <a class="d-block" href="#"><img src="./book images/35.jpg" class="img-fluid w-100" alt="Motiveted"></a>
+                                    <div class="product-overlay">
+                                        <ul class="mb-0 list-inline">
+                                            <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-outline-dark choose" href="#"><i class="fab fa-gratipay"></i></a></li>
+                                            <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-dark add-to-cart" href="#">Buy book</a></li>
+                                            <li class="list-inline-item mr-0"><a class="btn btn-sm btn-outline-dark" href="#"><i class="fas fa-book-reader"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            <section>
+                            <h3><a class="reset-anchor product-name" href="#">Napoleon Hill</a></h3>
+                            &#8372<span class="small text-muted product-price">670</span>
+                            </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>                   
+            </section>
+        </div>    
+    <!-- footer -->
+    <footer class="bg-dark text-white mt-3">
+        <!-- container -->
+        <div class="container py-4">
+            <!-- row -->
+            <div class="row py-5">
+                <!-- 3 columns -->
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <h6 class="text-uppercase">Customer services</h6>
+                    <ul class="list-unstyled">
+                        <li><a class="footer-link" href="#">Help &amp; Contact Us</a></li>
+                        <li><a class="footer-link" href="#">Returns &amp; Refunds</a></li>
+                        <li><a class="footer-link" href="#">Online Stores</a></li>
+                        <li><a class="footer-link" href="#">Terms &amp; Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <h6 class="text-uppercase">Company</h6>
+                    <ul class="list-unstyled">
+                        <li><a class="footer-link" href="#">What We Do</a></li>
+                        <li><a class="footer-link" href="#">Available Services</a></li>
+                        <li><a class="footer-link" href="#">Latest Posts</a></li>
+                        <li><a class="footer-link" href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h6 class="text-uppercase">Social media</h6>
+                    <ul class="list-unstyled footer-socials social-icon">
+                        <li><a class="footer-link twitter" href="https://twitter.com/"><i class="fab fa-twitter"></i> Twitter</a></li>
+                        <li><a class="footer-link facebook" href="https://www.facebook.com/"><i class="fab fa-facebook"></i> Facebook</a></li>
+                        <li><a class="footer-link instagram" href="https://www.instagram.com/"><i class="fab fa-instagram-square"></i> Instagram </a></li>
+                        <li><a class="footer-link linkedin" href="https://www.linkedin.com"><i class="fab fa-linkedin-in"></i> Linkedin </a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-top pt-4">
+                <!-- 2 columns -->
+                <div class="row">
+                    <div class="col-lg-6">
+                        <p class="small text-muted mb-0"> &copy; 2020 Spider-BookStore.</p>
+                    </div>
+                    <div class="col-lg-6 text-lg-right">
+                        <p class="text-white reset-anchor">Template designed by Anna<a href="#">My Temple</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>         
+    <!-- login -->
+    <div id="login" class="modal">
+        <div class="dialog"> 
+            <a href="#close" class="close">X</a>
+            <form class="text-center border p-5 m-auto" action="http://google.com" method="GET"> 
+                <h1 class="h4 mb-4"> Sign In </h1>
+                <div class="mb-4">
+                    <input type="email" class="form-control" name="email" placeholder="Enter Your Email:">
+                </div>
+                <div class="mb-4">
+                    <input type="password" class="form-control"  name="password" placeholder="Enter Your password:">
+                </div>
+                <p class="my-1"><a href="forgot.html"> Forgot password? </a></p>
+                <div class="form-control form-checkbox mb-4"><label><input type="checkbox" class="control-input" > Remember me </label></div>
+                <button type="submit" class="btn btn-dark btn-block"> logIn </button>
+                <p class="y-1"> Not a member? <a href="#register"> Register </a></p>
+            </form> 
+        </div>
+
+    </div> 
+    <!-- signin -->
+    <div id="register" class="modal">
+        <div class="dialog"> 
+            <a href="#close" class="close">X</a>
+            <form class="text-center border p-5 m-auto" action="http://google.com" method="GET">                        
+                <h1 class="h4 mb-4"> Sign Up </h1>
+                <div class="row mb-4">
+                    <div class="col-md-6 mx-0">
+                        <input type="text" class="form-control" name="first_name" placeholder="Enter Your Name:">
+                    </div>
+                    <div class="col-md-6 mx-0">
+                        <input type="text" class="form-control" name="Surname" placeholder="Enter Your Surname:">
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <input type="email" class="form-control" name="email" placeholder="Enter Your Email:">
+                </div>
+                <div class="row mb-4">
+                    <input type="password" class="form-control"  name="password" placeholder="Enter Your password:">
+                    <input type="password" class="form-control"  name="password" placeholder="Confirm Your password:">
+                </div>
+                <button type="submit" class="btn btn-dark btn-block"> Register  </button>
+                <p class="y-1"> Already a member? <a href="#login"> Sign In </a></p>
+            </form> 
+        </div>
+    </div>
+    <script src="js/app.js"></script>      
+    </body>
+</html>  

@@ -1,0 +1,6 @@
+.gradient{
+    width: 63vw;
+    padding: 1.5rem;
+    margin: 1.5rem;
+    background: linear-gradient(to bottom right,rgba(157, 231, 59, 0.705) 10%,rgba(202, 232, 233, 0.884)50%);
+}

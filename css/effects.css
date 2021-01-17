@@ -1,0 +1,162 @@
+/* btn-browse */
+
+ .btn-browse span {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  padding: 0.8rem 1.2rem;
+  background-color: #252525;
+  background: linear-gradient(grey,#252525);
+  color: #fff;
+  border-radius: 2rem;
+  transition: all 0.2s ease-in;
+} 
+
+.btn-browse{
+  font-size: 1.1rem;
+  line-height: 1.1;
+  padding: 0.8em 1.1em;
+  background-color: rgba(29, 20, 36, 0.877);
+  color: linen;
+  border-radius: 2rem;
+  background: linear-gradient(to left,rgba(139, 92, 173, 0.884),rgba(29, 20, 36, 0.877));
+}
+
+.btn-browse:hover span {
+  padding: 0.8rem 2rem;
+  color: #dcb14a;
+}
+
+/* footer lonk*/
+
+.footer-link {
+  font-size: 0.85rem;
+  transition: all 0.3s;
+}
+
+.footer-link:hover,
+.footer-link:focus {
+  padding-left: 0.2rem;
+  color: #fff;
+  text-decoration: none;
+  
+}
+
+.footer-socials a i{
+  display: inline-block;
+  text-align: center;
+  line-height: 2em;
+  color: #fff;
+  width: 2em;
+  height: 2em;
+  margin-left: 5px;
+  border: 1px solid #fff;
+  border-radius: 50px;
+}
+
+.social-icon i.fa-facebook:hover {
+  background-color: #3b5998;
+  border-color: #3b5998;
+}
+
+.social-icon i.fa-twitter:hover{
+  background-color: #55acee;
+  border-color: #55acee;
+}
+  
+.social-icon i.fa-instagram-square:hover{
+  background-color: #ff0084;
+  border-color: #ff0084;
+}
+  
+.social-icon i.fa-linkedin-in:hover{
+  background-color: #0e76a8;
+  border-color: #0e76a8;
+}
+  
+.social-icon a.facebook:hover {
+  color: #3b5998;
+}
+
+.social-icon a.twitter:hover{
+  color: #55acee;
+}
+  
+.social-icon a.instagram:hover{
+  color: #ff0084;
+}
+  
+.social-icon a.linkedin:hover{
+  color: #0e76a8
+}
+
+/* effect hover */
+.effect-ease li a:after{
+content:'';
+width:0%;
+transition:all 0.3s ease;
+left:50%;
+}
+
+.effect-ease li a:before{
+content:'';
+width:0%;
+transition:all 0.3s ease;
+left:50%;
+}
+
+.effect-ease li a:hover:after{
+content:'';
+position:absolute;
+bottom:0px;
+left:50%;
+background:#dcb14a;
+height:3px;
+width:50%;
+}
+
+.effect-ease li a:hover:before{
+content:'';
+position:absolute;
+bottom:0px;
+left:0px;
+background:#dcb14a;
+height:3px;
+width:50%;
+}
+
+/* effect-brackets: Brackets */
+
+.effect-brackets a::before,
+.effect-brackets a::after {
+display: inline-block;
+opacity: 0;
+-webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
+-moz-transition: -moz-transform 0.3s, opacity 0.2s;
+transition: transform 0.3s, opacity 0.2s;
+}
+
+.effect-brackets a::before {
+margin-right: 10px;
+content: '[';
+-webkit-transform: translateX(20px);
+-moz-transform: translateX(20px);
+transform: translateX(20px);
+}
+
+.effect-brackets a::after {
+margin-left: 10px;
+content: ']';
+-webkit-transform: translateX(-20px);
+-moz-transform: translateX(-20px);
+transform: translateX(-20px);
+}
+
+.effect-brackets a:hover::before,
+.effect-brackets a:hover::after,
+.effect-brackets a:focus::before,
+.effect-brackets a:focus::after {
+opacity: 1;
+-webkit-transform: translateX(0px);
+-moz-transform: translateX(0px);
+transform: translateX(0px);
+}

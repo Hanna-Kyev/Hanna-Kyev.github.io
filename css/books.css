@@ -1,0 +1,125 @@
+.position-relative {
+    position: relative !important;
+}
+
+.category-item {
+    display: block;
+    position: relative;
+    color: #343a40;
+    transition: all 0.3s;
+}
+  
+.category-item img {
+    transition: all 0.3s;
+}
+  
+.category-item-title {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.07);
+    font-size: 0.8rem;
+}
+  
+.category-item:hover img {
+    opacity: 0.7;
+}
+/* сделать все изображения серыми на 40% */
+.product img {
+    filter: grayscale(40%);
+    transition: all 0.3s;
+}
+  
+.product-overlay {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 1rem 0;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.position-relative{
+    position: relative !important;
+}
+  
+.product-overlay ul li {
+    transition: all 0.3s;
+}
+  
+.product-overlay ul li:first-of-type {
+    transform: translateX(-10px);
+    opacity: 0;
+}
+  
+.product-overlay ul li:last-of-type {
+    transform: translateX(10px);
+    opacity: 0;
+}
+  
+.product:hover img {
+    opacity: 0.3;
+}
+  
+.product:hover .product-overlay {
+    opacity: 1;
+}
+  
+.product:hover .product-overlay li {
+    opacity: 1;
+    transform: none;
+}
+  
+.product .badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 999;
+}
+
+.bg-cover {
+    background-size: cover !important;
+}
+  
+.bg-center {
+    background-position: center center !important;
+}
+  
+.reset-anchor {
+    color: inherit;
+    transition: all 0.3s;
+}
+  
+.reset-anchor:hover, .reset-anchor:focus {
+    text-decoration: none;
+}
+
+.over {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    transition: all 0.2s ease-out;
+    /* transition-delay: 0.2s; */
+    width: 100vw;
+    height: 100vw;
+    visibility: hidden;
+}
+
+.over.active {
+    visibility: visible;
+}
+

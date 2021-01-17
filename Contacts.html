@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Contacts</title>
+        <title>Spider-BookStore</title>
+        <link rel="icon" href="favicon.ico">
+        <link href="css/variables.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+        <link href="css/flexible.css" rel="stylesheet">
+        <link href="css/aside.css" rel="stylesheet"> 
+        <link href="css/navbar.css" rel="stylesheet">
+        <link href="css/gradient.css" rel="stylesheet">        
+        <link href="css/books.css" rel="stylesheet">
+        <link href="css/effects.css" rel="stylesheet">
+        <link href="css/transform.css" rel="stylesheet">
+        <link href="css/forms.css" rel="stylesheet">
+        <link href="css/modal.css" rel="stylesheet">
+        <link href="css/grid.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="over"></div>
+        <header class="bg-light">
+            <nav id="nav">
+                <div class="nav-center">
+                    <div class="nav-header">
+                        <a class="navbar-brand" href="index.html"><span class="font-weight-bold text-uppercase text-dark logo">Spider BookStore</span></a>
+                    </div>
+                    <input class="trigger" type="checkbox" id="hamburger">
+                    <div class="navbar-links effect-brackets">
+                        <ul class="navbar-nav">
+                            <li>
+                                <a href="index.html" class="nav-link">library</a>
+                            </li>
+                            <li>
+                                <a href="BookStore.html" class="nav-link">BookStore</a>
+                            </li>
+                            <li>
+                                <a href="Reviews.html" class="nav-link">Reviews</a>
+                            </li>
+                            <li>
+                                <a href="Contacts.html" class="nav-link">Contacts</a>
+                            </li>
+                        </ul>
+                    </div>                
+                    <ul class="navbar-tool effect-ease">
+                        <li>
+                            <a class="sidebar-toggle" href="#"> <i class="fas fa-dolly-flatbed text-gray"></i><small class="text-gray count-items-in-cart"></small></a>
+                        </li>
+                        <li>
+                            <a class="wish-toggle" href="#"> <i class="far fa-heart"></i><small class="text-gray count-wish-items" id="list-Desires"></small></a>
+                        </li>
+                        <li>
+                            <a class="" href="#login"> <i class="fas fa-user-alt text-gray"></i></a>
+                        </li>
+                    </ul>
+                    <label for="hamburger">
+                        <i class="nav-toggle fas fa-bars"></i>
+                    </label>                
+                </div>
+            </nav>
+        </header>
+        <!-- aside -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <button class="close-btn"><i class="fas fa-times"></i></button>
+                <h5 class="logo">Your Shopping Cart</h5>
+            </div>
+            <div class="cart-items">
+                <div class="cart-item">
+                    <div class="picture product-img">
+                        <img src="./book images/20.jpg" alt="book 20" class="img-fluid w=100">
+                    </div>
+                    <div class="product-name">Clifford Simak</div>
+                    <div class="remove-btn text-right">
+                    <a href="#" class="reset-anchor m-auto"><i class="fas fa-trash-alt"></i></a>
+                    </div>
+                    <div class="quantity">
+                        <div class="border d-flex justify-content-around mx-auto">
+                            <i class="fas fa-caret-left"></i>
+                                <span class="border-1 p-1 amount">1</span>
+                            <i class="fas fa-caret-right"></i>
+                        </div>
+                    </div>
+                    <div class="price">
+                    &#8372 <spa class="product-price">177</spa>
+                    </div>
+                    <div class="cart-footer">
+                        <h3>your total : &#8372<span class="cart-total">0</span></h3>
+                        <button class="clear-cart">Clear All</button>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <aside class="wish">
+            <div class="wish-header">
+                <button class="closen-btn"><i class="fas fa-times"></i></button>
+                <h5 class="logo"><i class="fas fa-heart"></i> Your List Desires</h5>
+            </div>
+            <div class="wish-items">
+                <div class="wish-item">
+                    <div class="picture product-img">
+                        <img src="./book images/22.jpg" alt="book 22" class="img-fluid w=100">
+                    </div>
+                    <div class="product-name">Stephen King</div>
+                    <div class="add-btn text-right">            
+                        <a href="#" class="reset-anchor m-auto"><i class="fas fa-cart-plus"></i></a>
+                    </div>
+                    <div class="quantity">
+                        <div class="border d-flex justify-content-around mx-auto">
+                            <i class="fas fa-caret-left"></i>
+                                <span class="border-1 p-1 amount">1</span>
+                            <i class="fas fa-caret-right"></i>
+                        </div>
+                    </div>
+                    <div class="price">
+                    &#8372 <spa class="product-price">149</spa>
+                    </div>
+                    <div class="wish-footer">
+                        <h3>your total : <span class="wish-total">0</span></h3>
+                        <a class="btn btn-sm btn-dark add-to-cart" href="#">Buy all books</a>
+                        <button class="wish-clear">Clear All</button> 
+                    </div> 
+                </div>
+            </div>
+        </aside>    
+        <div class="container">
+            <div class="row"> 
+                <form class="text-center border border-light p-5 m-auto" action="#!">
+                    <h4 class="h4 mb-4">Contact us</h4>
+                    <input type="text" class="form-control mb-4" placeholder="Name">
+                    <input type="email" class="form-control mb-4" placeholder="E-mail" required>
+                    <label>Subject</label>
+                    <select class="custom-select mb-4">
+                        <option value="" disabled>Choose option</option>
+                        <option value="1" selected>Feedback</option>
+                        <option value="2">Report a bug</option>
+                        <option value="3">Feature request</option>
+                        <option value="4">Feature request</option>
+                    </select>
+                    <div class="form-group">
+                        <textarea class="form-control rounded-0" rows="3" placeholder="Message"></textarea>
+                    </div>
+                    <div class="custom-control custom-checkbox mb-4">
+                        <input type="checkbox" class="custom-control-input" id="contactFormCopy">
+                        <label class="custom-control-label" for="contactFormCopy">Send me a copy of this message</label>
+                    </div><button class="btn btn-dark btn-block" type="submit">Send</button></div>  
+                    <!-- <div class="col-lg-3"><address>Adress</address></div> -->
+                </form>                         
+            </div>
+        </div>
+        <!-- footer -->
+        <footer class="bg-dark text-white mt-3">
+            <div class="container py-4">
+                <div class="row py-5"> 
+                    <div class="col-md-4 mb-3 mb-md-0"> 
+                        <h6 class="text-uppercase">Customer services</h6>
+                        <ul class="list-unstyled">
+                            <li><a class="footer-link" href="#">Help &amp; Contact Us</a></li>
+                            <li><a class="footer-link" href="#">Returns &amp; Refunds</a></li>
+                            <li><a class="footer-link" href="#">Online Stores</a></li>
+                            <li><a class="footer-link" href="#">Terms &amp; Conditions</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 mb-3 mb-md-0">  
+                        <h6 class="text-uppercase">Company</h6>
+                        <ul class="list-unstyled">
+                            <li><a class="footer-link" href="#">What We Do</a></li>
+                            <li><a class="footer-link" href="#">Available Services</a></li>
+                            <li><a class="footer-link" href="#">Latest Posts</a></li>
+                            <li><a class="footer-link" href="#">FAQs</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <h6 class="text-uppercase">Social media</h6>
+                        <ul class="list-unstyled footer-socials social-icon">
+                            <li><a class="footer-link twitter" href="https://twitter.com/"><i class="fab fa-twitter"></i> Twitter</a></li>
+                            <li><a class="footer-link facebook" href="https://www.facebook.com/"><i class="fab fa-facebook"></i> Facebook</a></li>
+                            <li><a class="footer-link instagram" href="https://www.instagram.com/"><i class="fab fa-instagram-square"></i> Instagram </a></li>
+                            <li><a class="footer-link linkedin" href="https://www.linkedin.com"><i class="fab fa-linkedin-in"></i> Linkedin </a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="border-top pt-4">
+                    <!-- 2 columns --> 
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <p class="small text-muted mb-0">&copy; 2021 Spider-BookStore.</p>
+                        </div>
+                        <div class="col-lg-6 text-lg-right">
+                            <p class="text-white reset-anchor">Template designed by Anna <a href="#" ></a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- login -->
+        <div id="login" class="modal">
+            <div class="dialog"> 
+                <a href="#close" class="close">X</a>
+                <form class="text-center border p-5 m-auto" action="http://google.com" method="GET"> 
+                    <h1 class="h4 mb-4"> Sign In </h1>
+                    <div class="mb-4">
+                        <input type="email" class="form-control" name="email" placeholder="Enter Your Email:">
+                    </div>
+                    <div class="mb-4">
+                        <input type="password" class="form-control"  name="password" placeholder="Enter Your password:">
+                    </div>
+                    <p class="my-1"><a href="forgot.html"> Forgot password? </a></p>
+                    <div class="form-control form-checkbox mb-4"><label><input type="checkbox" class="control-input" > Remember me </label></div>
+                    <button type="submit" class="btn btn-dark btn-block"> logIn </button>
+                    <p class="y-1"> Not a member? <a href="#register"> Register </a></p>
+                </form> 
+            </div>
+    
+        </div>
+        <!-- signin -->
+        <div id="register" class="modal">
+            <div class="dialog"> 
+                <a href="#close" class="close">X</a>
+                <form class="text-center border p-5 m-auto" action="http://google.com" method="GET">                        
+                    <h1 class="h4 mb-4"> Sign Up </h1>
+                    <div class="row mb-4">
+                        <div class="col-md-6 mx-0">
+                            <input type="text" class="form-control" name="first_name" placeholder="Enter Your Name:">
+                        </div>
+                        <div class="col-md-6 mx-0">
+                            <input type="text" class="form-control" name="Surname" placeholder="Enter Your Surname:">
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <input type="email" class="form-control" name="email" placeholder="Enter Your Email:">
+                    </div>
+                    <div class="row mb-4">
+                        <input type="password" class="form-control"  name="password" placeholder="Enter Your password:">
+                        <input type="password" class="form-control"  name="password" placeholder="Confirm Your password:">
+                    </div>
+                    <button type="submit" class="btn btn-dark btn-block"> Register  </button>
+                    <p class="y-1"> Already a member? <a href="#login"> Sign In </a></p>
+                </form> 
+            </div>
+        </div>
+        <script src="js/app.js"></script>        
+    </body>
+</html>

@@ -1,0 +1,66 @@
+
+
+div{
+    color: var(--clr-primary-1);
+}
+
+a::before{
+    content: '♥';
+}
+
+a::after{
+    content: '→';
+}
+
+body{
+    overflow-x: hidden;
+    color: green;
+    background-image: url('E:/Spider/book images/Slider/Triller.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    /* background: var(--clr-primary-6); */
+}
+
+.bg-dark{
+    background-color: black;
+    color: wheat;
+}
+
+.primary-content{
+    color: var(--primary-color) ;
+}
+
+.float-left{
+    float: left !important;
+}
+
+.float-right{
+    float: right !important;
+}
+
+.container{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.col{
+    width: 25%;
+    float: left;
+    text-align: center;
+}
+
+.col-4{
+    width: 33.3333%;
+    float: left;
+    text-align: center;
+}
+
+.cf{
+    content: '';
+    display: block;
+    height: 0;
+    visibility: hidden;
+    clear: both; 
+}

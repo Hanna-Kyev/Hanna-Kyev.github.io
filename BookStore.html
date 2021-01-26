@@ -61,69 +61,32 @@
           </nav>
     </header>
         <!-- aside -->
-    <aside class="sidebar">
-        <div class="sidebar-header">
-            <button class="close-btn"><i class="fas fa-times"></i></button>
-            <h5 class="logo">Your Shopping Cart</h5>
-        </div>
-        <div class="cart-items">
-            <div class="cart-item">
-                <div class="picture product-img">
-                    <img src="./book images/20.jpg" alt="book 20" class="img-fluid w=100">
-                </div>
-                <div class="product-name">Clifford Simak</div>
-                <div class="remove-btn text-right">
-                <a href="#" class="reset-anchor m-auto"><i class="fas fa-trash-alt"></i></a>
-                </div>
-                <div class="quantity">
-                    <div class="border d-flex justify-content-around mx-auto">
-                        <i class="fas fa-caret-left"></i>
-                            <span class="border-1 p-1 amount">1</span>
-                        <i class="fas fa-caret-right"></i>
-                    </div>
-                </div>
-                <div class="price">
-                &#8372 <spa class="product-price">177</spa>
-                </div>
-                <div class="cart-footer">
-                    <h3>your total : &#8372<span class="cart-total">0</span></h3>
-                    <button class="clear-cart">Clear All</button>
-                </div>
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <button class="close-btn"><i class="fas fa-times"></i></button>
+                <h5 class="logo">Your Shopping Cart</h5>
             </div>
-        </div>
-    </aside>
-    <aside class="wish">
-        <div class="wish-header">
-            <button class="closen-btn"><i class="fas fa-times"></i></button>
-            <h5 class="logo"><i class="fas fa-heart"></i> Your List Desires</h5>
-        </div>
-        <div class="wish-items">
-            <div class="wish-item">
-                <div class="picture product-img">
-                    <img src="./book images/22.jpg" alt="book 22" class="img-fluid w=100">
-                </div>
-                <div class="product-name">Stephen King</div>
-                <div class="add-btn text-right">            
-                    <a href="#" class="reset-anchor m-auto"><i class="fas fa-cart-plus"></i></a>
-                </div>
-                <div class="quantity">
-                    <div class="border d-flex justify-content-around mx-auto">
-                        <i class="fas fa-caret-left"></i>
-                            <span class="border-1 p-1 amount">1</span>
-                        <i class="fas fa-caret-right"></i>
-                    </div>
-                </div>
-                <div class="price">
-                &#8372 <spa class="product-price">149</spa>
-                </div>
-                <div class="wish-footer">
-                    <h3>your total : <span class="wish-total">0</span></h3>
-                    <a class="btn btn-sm btn-dark add-to-cart" href="#">Buy all books</a>
-                    <button class="wish-clear">Clear All</button> 
-                </div> 
+            <div class="cart-items">
+                
             </div>
-        </div>
-    </aside>
+            <div class="cart-footer">
+                <h3>your total : &#8372<span class="cart-total">0</span></h3>
+                <button class="clear-cart">Clear All</button>
+            </div>
+        </aside>
+        <aside class="wish">
+            <div class="wish-header">
+                <button class="closen-btn"><i class="fas fa-times"></i></button>
+                <h5 class="logo"><i class="fas fa-heart"></i> Your List Desires</h5>
+            </div>
+            <div class="wish-items">
+                
+            </div>
+            <div class="wish-footer">
+                <h3>your total : <span class="wish-total">0</span></h3>
+                <button class="wish-clear">Clear All</button> 
+            </div> 
+        </aside>
         <!-- slider -->   
         <div class="container color">
         <!-- HERO SECTION--> 
@@ -348,7 +311,7 @@
                 <!-- 2 columns -->
                 <div class="row">
                     <div class="col-lg-6">
-                        <p class="small text-muted mb-0"> &copy; 2020 Spider-BookStore.</p>
+                        <p class="small text-muted mb-0"> &copy; 2021 Spider-BookStore.</p>
                     </div>
                     <div class="col-lg-6 text-lg-right">
                         <p class="text-white reset-anchor">Template designed by Anna<a href="#">My Temple</a></p>
@@ -356,7 +319,45 @@
                 </div>
             </div>
         </div>
-    </footer>         
+    </footer> 
+    <!-- template cartItem -->
+    <template id="cartItem">
+        <div class="cart-item">
+            <div class="picture product-img">
+                <img src="./book images/21.jpg" alt="book 20" class="img-fluid w=100">
+            </div>
+            <div class="product-name">Clifford Simak</div>
+            <div class="remove-btn text-right">
+            <a href="#" class="reset-anchor m-auto"><i class="fas fa-trash-alt"></i></a>
+            </div>
+            <div class="quantity">
+                <div class="border d-flex justify-content-around mx-auto">
+                    <i class="fas fa-caret-left"></i>
+                        <span class="border-1 p-1 amount">1</span>
+                    <i class="fas fa-caret-right"></i>
+                </div>
+            </div>
+            <div class="prices">
+                <span class="price">&#8372 <spa class="product-price">177</spa></span> 
+                <span class="subtotal"><spa class="product-subtotal"></spa></span>
+            </div>
+        </div>  
+    </template>
+    <!-- template  -->
+    <template id="wishItem">
+        <div class="wish-item">
+            <div class="picture product-img">
+                <img src="./book images/22.jpg" alt="book 22" class="img-fluid w=100">
+            </div>
+            <div class="product-name">Stephen King</div>
+            <div class="add-btn text-right">            
+                <a href="#" class="reset-anchor m-auto"><i class="fas fa-cart-plus"></i></a>
+            </div>
+            <div class="prices">
+                <span class="price">&#8372 <spa class="product-price">149</spa></span> 
+            </div>
+        </div> 
+    </template>        
     <!-- login -->
     <div id="login" class="modal">
         <div class="dialog"> 

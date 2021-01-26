@@ -1,120 +1,122 @@
-const products = [
+const product = [
     {
         id: 1,
+        image:"./book images/38.jpg",
+        name: "Stephen Hawking",
+        price: 333,
+    },
+    {
+        id: 2,
+        image:"./book images/3.jpg",
+        name: "Dictionary Оxford",
+        price: 499, 
+    },
+    {
+        id: 3,
         image:"./book images/7.jpg",
         name: "James Joyce",
         price: 799,
-        category:"Novelties"
-    },
-    {
-        id: 2,
-        image:"./book images/1.jpg",
-        name: "Stephen King",
-        price: 199,
-        category:"Horror"
-    },
-    {
-        id: 3,
-        image:"./book images/11.jpg",
-        name: "Homo Deus",
-        price: 399,
-        category:"Cognetives"
     },
     {
         id: 4,
-        image:"./book images/9.jpg",
-        name: "Michael Bulgakov",
-        price: 599,
-        category:"Collections"
+        image:"./book images/29.jpg",
+        name: "Victor Pelevin",
+        price: 388,
     },
     {
         id: 5,
-        image:"./book images/5.jpg",
-        name: "legal",
-        price: 432,
-        category:"legal"
+        image:"./book images/31.jpg",
+        name: "Fairy tales",
+        price: 380,
     },
     {
         id: 6,
-        image:"./book images/8.jpg",
-        name: "William Shakespeare",
-        price: 599,
-        category:"Classic"
+        image:"./book images/19.jpg",
+        name: "Clifford Simak",
+        price: 310,
     },
     {
         id: 7,
-        image:"./book images/4.jpg",
-        name: "Dictionary",
-        price: 799,
-        category:"Education"
+        image:"./book images/28.jpg",
+        name: "Sergei Minaev",
+        price: 350,
     },
     {
         id: 8,
-        image:"./book images/12.jpg",
-        name: "Stephen King",
-        price: 399,
-        category:"Popular"
+        image:"./book images/35.jpg",
+        name: "Napoleon Hill",
+        price: 670,
     },
-];
-
-const categories = [
-    {
-        id: 1,
-        image: "./book images/1.jpg",
-        name: "Horror",
-    },
-    
-    {
-        id: 2,
-        image: "./book images/6.jpg",
-        name: "Classic",
-    },
-    
-    {
-        id: 3,
-        image: "./book images/3.jpg",
-        name: "Education",
-    },
-
-    {
-        id: 4,
-        image: "./book images/11.jpg",
-        name: "Cognetives",
-    },
-
-    {
-        id: 5,
-        image:"./book images/7.jpg",
-        name: "Novelties",
-    },
-
-    {
-        id: 6,
-        image:"./book images/9.jpg",
-        name:"Collections"
-    },
-
-    {
-        id: 7,
-        image:"./book images/8.jpg",
-        name:"Classic"
-    },
-
-    {
-        id: 8,
-        image:"./book images/5.jpg",
-        name: "legal",
-    },
-
     {
         id: 9,
-        image:"./book images/11.jpg",
-        name: "Popular"
+        image:"./book images/24.jpg",
+        name: "Stephen King",
+        price: 222, 
     },
-
     {
         id: 10,
-        image:"./book images/12.jpg",
-        name:"Triller"
+        image:"./book images/20.jpg",
+        name: "Clifford Simak",
+        price: 300,
     },
+    {
+        id: 11,
+        image:"./book images/6.jpg",
+        name: "John Updike",
+        price: 333,
+    },
+    {
+        id: 12,
+        image:"./book images/34.jpg",
+        name: "Elena Blavatsky",
+        price: 799,
+    },
+    {
+        id: 13,
+        image:"./book images/30.jpg",
+        name: "George Orwell",
+        price: 300,
+    },
+    {
+        id: 14,
+        image:"./book images/15.jpg",
+        name: "Stephen King",
+        price: 110,
+    },
+    {
+        id: 15,
+        image:"./book images/21.jpg",
+        name: "Clifford Simak",
+        price: 177,
+    },
+    {
+        id: 16,
+        image:"./book images/32.jpg",
+        name: "Thomas Ricks",
+        price: 670,
+    },
+    {
+        id: 17,
+        image:"./book images/26.jpg",
+        name: "Mikhail Hrushevsky",
+        price: 399,
+    },
+    {
+        id: 18,
+        image:"./book images/16.jpg",
+        name: "Muller Dictionary",
+        price: 460,
+    },
+    {
+        id: 19,
+        image:"./book images/14.jpg",
+        name: "Ukrainian Dictionary",
+        price: 170,
+    },
+    {
+        id: 20,
+        image:"./book images/5.jpg",
+        name: "Ukrainian laws",
+        price: 890,
+    }
 ];

@@ -1,3 +1,15 @@
+@keyframes bounce {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.5);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
 .sidebar{
     position: fixed;
     top: 0;
@@ -45,7 +57,8 @@
 
 .price{
     grid-row: 3/4;
-    grid-column: 2/3;
+    grid-column: 2/4;
+    padding: 1rem;
 }
 
 .sidebar-header{
@@ -110,6 +123,7 @@
 
 .fa-caret-left, .fa-caret-right{
     padding-top: 0.5rem;
+    cursor: pointer;
 }
 
 .count-items-in-cart{
@@ -133,15 +147,13 @@
 }
 
 .cart-footer{
-    display: grid;
-    padding-top: 5.5rem;
-    grid-row: 3/4;
-    grid-column: 2/3;
+    padding-bottom: 2.5rem;
+    text-align: center;
 }
 
 .clear-cart{
     cursor: pointer;
-}
+} 
 
 .wish{
     position: fixed;
@@ -215,11 +227,14 @@
     padding-left: 0.5rem;
 }
 
+.inc-dec-btn, .amount{
+    padding: 0.5rem 1rem;
+}
+  
+ 
 .wish-footer{
-    display: grid;
-    padding-top: 5.5rem;
-    grid-row: 3/4;
-    grid-column: 2/3;
+    padding-bottom: 2.5rem;
+    text-align: center;
 }
 
 .wish-clear{
@@ -227,9 +242,7 @@
     margin-top: 0.5rem;
 }
 
-.add-to-cart{
-    display: grid;
-}
+
 
 
 

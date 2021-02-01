@@ -1,4 +1,4 @@
-const product = [
+const products = [
     {
         id: 1,
         image:"./book images/38.jpg",

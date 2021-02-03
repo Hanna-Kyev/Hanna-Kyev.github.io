@@ -3,21 +3,13 @@
 const sidebarToggle = document.querySelector('.sidebar-toggle');
 const sidebar = document.querySelector('.sidebar');
 const closeBtn = document.querySelector('.close-btn');
-
 const countItemsInCart = document.querySelector('.count-items-in-cart');
 const cartItems = document.querySelector('.cart-items');
 const clearCart = document.querySelector('.clear-cart');
 
-const countWishItems = document.querySelector('.count-wish-items');
-const closenBtn = document.querySelector('.closen-btn');
-const wish = document.querySelector('.wish');
-const wishToggle = document.querySelector('.wish-toggle')
-const wishItems = document.querySelector('.wish-items');
-const wishClear = document.querySelector('.wish-clear');
 
 let cart = [];
 
-// console.dir(sidebarToggle);
 
 function subtotals(){
     let itemsInCart = document.querySelectorAll('.cart-item');
@@ -145,7 +137,6 @@ function renderCart(){
 
 };
 
-
 cartItems.addEventListener('click', (event) => {
     if (event.target.classList.contains('fa-caret-right')){
         +event.target.previousElementSibling.innerText++;
@@ -153,7 +144,6 @@ cartItems.addEventListener('click', (event) => {
     } else if (event.target.classList.contains('fa-caret-left')){
         +event.target.nextElementSibling.innerText--;
     }
-    // console.dir(event.target);
 });
 
 (function(){
@@ -181,46 +171,94 @@ cartItems.addEventListener('click', (event) => {
 })();
 
 
-wishToggle.addEventListener('click', function(){
-    wish.classList.toggle('show-wish');
-});
+const countWishItems = document.querySelector('.count-wish-items');
+const closenBtn = document.querySelector('.closen-btn');
+const wish = document.querySelector('.wish');
+const wishToggle = document.querySelector('.wish-toggle')
+const wishItems = document.querySelector('.wish-items');
+const wishClear = document.querySelector('.wish-clear');
+let listDesires = [];
 
-closenBtn.addEventListener('click', function(){
-    wish.classList.toggle('show-wish');
-});
-
-function productChoose(wishtemplate,item){
-    wishtemplate.querySelector('.product-name').textContent = item.querySelector('.product-name').textContent;
-    wishtemplate.querySelector('.product-price').textContent = item.querySelector('.product-price').textContent;
-    wishtemplate.querySelector('.product-img img').setAttribute('src',item.querySelector('.img-fluid').getAttribute('src'));
-    return wishtemplate;
+function createWish(item){
+    const div = document.createElement('div');
+    div.className = "wish-item";
+    div.setAttribute('id', item.id);
+    div.innerHTML = `
+    <div class="wish-item" id = "${item.id}">
+        <div class="picture product-img">
+        <img src="${item.image}" alt="${item.name}" class="img-fluid w=100">
+            </div>
+            <div class="product-name">${item.name}</div>
+                <div class="add-btn text-right">            
+                    <a href="#" class="reset-anchor m-auto"><i class="fas fa-cart-plus"></i></a>
+                </div>
+            <div class="prices">
+            <span class="price">&#8372 <spa class="product-price">${item.price}</spa></span> 
+        </div>
+    </div>
+    `
+    wishItems.append(div);
 };
 
-let choose = document.querySelectorAll('.choose');
-const wishtemplate = document.getElementById('wishItem').content;
-
-for (let i = 0; i<choose.length; i++){
-    choose[i].addEventListener('click', function(e){
-
-        let item = e.target.closest('.product');
-        let content = productChoose(wishtemplate,item);
-        document.querySelector('.wish-items').append(document.importNode(content, true));
-        countWishItems.textContent++;
-
-        if (countWishItems.textContent>0){
-            countWishItems.classList.add('notempty'); 
-        } else{
-            countWishItems.classList.remove('notempty');
-        }
-    })
+function getProduct(id) {
+    return products.find(product => product.id === +(id));
 };
 
-wishItems.addEventListener('click', function(event){
-    if (event.target.classList.contains('fa-caret-right')){
-        +event.target.previousElementSibling.innerText++;         
-    } else if (event.target.classList.contains('fa-caret-left')){
-        +event.target.nextElementSibling.innerText--;
+function productChoose(){
+
+    const chooseButtons = [...document.querySelectorAll('.choose')];
+    chooseButtons.forEach(button => {
+        button.addEventListener('click', (event) => {
+            let wishItem = {...getProduct(event.target.closest('.product').getAttribute('data-id'))};
+            listDesires = [...listDesires, wishItem];
+            
+            createWish(wishItem);
+            countWishItems.textContent++;
+
+            if (countWishItems.textContent>0){
+                countWishItems.classList.add('notempty'); 
+            } else{
+                countWishItems.classList.remove('notempty');
+            };
+        });
+    });
+
+};
+
+function clearWish(){
+    listDesires = [];
+    while(wishItems.children.length>0){
+        wishItems.removeChild(wishItems.children[0]);
     }
-    // console.dir(event.target);
-});
+}
+
+const filterWishItems = (listDesires, curentItem) => listDesires.filter(item => item.id !==+(curentItem.dataset.id))
+
+function renderWish(){
+     wishClear.addEventListener('click', () => clearWish());
+
+     wishItems.addEventListener('click', (event) => {
+         if(event.target.classList.contains('fa-cart-plus')){
+            listDesires =  filterWishItems(listDesires, event.target);
+         }
+     })
+
+}
+
+(function(){
+    wishToggle.addEventListener('click', () => {
+        document.querySelector('.over').classList.add('active');
+        wish.classList.toggle('show-wish');
+    });
+    closenBtn.addEventListener('click', () => {
+        wish.classList.toggle('show-wish');
+        document.querySelector('.over').classList.remove('active');
+    });
+
+    productChoose();
+    renderWish()
+
+})();
+
+
 

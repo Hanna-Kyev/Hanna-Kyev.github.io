@@ -20,7 +20,8 @@
         <link href="css/aside.css" rel="stylesheet">         
     </head>
     <body> 
-         <!--nav  -->
+        <!-- navbar -->
+        <div class="over"></div>
         <header class="bg-light">
             <nav id="nav">
                 <div class="nav-center">
@@ -31,7 +32,7 @@
                     <div class="navbar-links effect-brackets">
                         <ul class="navbar-nav">
                             <li>
-                                <a href="index.html" class="nav-link">library</a>
+                                <a href="index.html" class="nav-link">Home</a>
                             </li>
                             <li>
                                 <a href="BookStore.html" class="nav-link">BookStore</a>
@@ -49,7 +50,7 @@
                             <a class="sidebar-toggle" href="#"> <i class="fas fa-dolly-flatbed text-gray"></i><small class="text-gray count-items-in-cart"></small></a>
                         </li>
                         <li>
-                            <a class="wish-toggle" href="#"> <i class="far fa-heart"></i><small class="text-gray count-wish-items" id="list-Desires"></small></a>
+                            <a class="wish-toggle list-Desires" href="#"> <i class="far fa-heart"></i><small class="text-gray count-wish-items" id="list-Desires"></small></a>
                         </li>
                         <li>
                             <a class="" href="#login"> <i class="fas fa-user-alt text-gray"></i></a>
@@ -68,25 +69,7 @@
                 <h5 class="logo">Your Shopping Cart</h5>
             </div>
             <div class="cart-items">
-                <div class="cart-item">
-                    <div class="picture product-img">
-                        <img src="./book images/20.jpg" alt="book 20" class="img-fluid w=100">
-                    </div>
-                    <div class="product-name">Clifford Simak</div>
-                    <div class="remove-btn text-right">
-                    <a href="#" class="reset-anchor m-auto"><i class="fas fa-trash-alt"></i></a>
-                    </div>
-                    <div class="quantity">
-                        <div class="border d-flex justify-content-around mx-auto">
-                            <i class="fas fa-caret-left"></i>
-                                <span class="border-1 p-1 amount">1</span>
-                            <i class="fas fa-caret-right"></i>
-                        </div>
-                    </div>
-                    <div class="price">
-                    &#8372 <spa class="product-price">177</spa>
-                    </div>
-                </div>
+                
             </div>
             <div class="cart-footer">
                 <h3>your total : &#8372<span class="cart-total">0</span></h3>
@@ -99,24 +82,13 @@
                 <h5 class="logo"><i class="fas fa-heart"></i> Your List Desires</h5>
             </div>
             <div class="wish-items">
-                <div class="wish-item">
-                    <div class="picture product-img">
-                        <img src="./book images/22.jpg" alt="book 22" class="img-fluid w=100">
-                    </div>
-                    <div class="product-name">Stephen King</div>
-                    <div class="add-btn text-right">            
-                        <a href="#" class="reset-anchor m-auto"><i class="fas fa-cart-plus"></i></a>
-                    </div>
-                    <div class="price-wish">
-                    &#8372 <spa class="product-price">149</spa>
-                    </div>
-                </div>
+                
             </div>
             <div class="wish-footer">
                 <h3>your total : <span class="wish-total">0</span></h3>
                 <button class="wish-clear">Clear All</button> 
             </div> 
-        </aside>   
+        </aside>  
         <div class="container color">
         <!-- HERO SECTION-->
         <div class="gradient">  
@@ -320,6 +292,7 @@
                 </form> 
             </div>
         </div>
+        <script src="js/data.js"></script> 
         <script src="js/app.js"></script>
     </body>
 </html>

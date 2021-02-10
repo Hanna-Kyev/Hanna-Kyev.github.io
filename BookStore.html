@@ -8,58 +8,60 @@
         <link href="css/variables.css" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet">
         <link href="css/flexible.css" rel="stylesheet">
-        <link href="css/aside.css" rel="stylesheet"> 
         <link href="css/navbar.css" rel="stylesheet">
         <link href="css/gradient.css" rel="stylesheet">        
         <link href="css/books.css" rel="stylesheet">
         <link href="css/effects.css" rel="stylesheet">
         <link href="css/transform.css" rel="stylesheet">
-        <link href="css/forms.css" rel="stylesheet">
+        <link href="css/forms.css" rel="stylesheet"> 
         <link href="css/modal.css" rel="stylesheet">
-        <link href="css/grid.css" rel="stylesheet">           
+        <link href="css/animation.css" rel="stylesheet">
+        <link href="css/grid.css" rel="stylesheet"> 
+        <link href="css/aside.css" rel="stylesheet">             
     </head>
     <body>  
-         <!-- nav -->
-    <header class="bg-light">
-        <nav id="nav">
-            <div class="nav-center">
-                <div class="nav-header">
-                    <a class="navbar-brand" href="index.html"><span class="font-weight-bold text-uppercase text-dark logo">Spider BookStore</span></a>
-                </div>
-                <input class="trigger" type="checkbox" id="hamburger">
-                <div class="navbar-links effect-brackets">
-                    <ul class="navbar-nav">
+        <!-- navbar -->
+        <div class="over"></div>
+        <header class="bg-light">
+            <nav id="nav">
+                <div class="nav-center">
+                    <div class="nav-header">
+                        <a class="navbar-brand" href="index.html"><span class="font-weight-bold text-uppercase text-dark logo">Spider BookStore</span></a>
+                    </div>
+                    <input class="trigger" type="checkbox" id="hamburger">
+                    <div class="navbar-links effect-brackets">
+                        <ul class="navbar-nav">
+                            <li>
+                                <a href="index.html" class="nav-link">Home</a>
+                            </li>
+                            <li>
+                                <a href="BookStore.html" class="nav-link">BookStore</a>
+                            </li>
+                            <li>
+                                <a href="Reviews.html" class="nav-link">Reviews</a>
+                            </li>
+                            <li>
+                                <a href="Contacts.html" class="nav-link">Contacts</a>
+                            </li>
+                        </ul>
+                    </div>                
+                    <ul class="navbar-tool effect-ease">
                         <li>
-                            <a href="index.html" class="nav-link">Home</a>
+                            <a class="sidebar-toggle" href="#"> <i class="fas fa-dolly-flatbed text-gray"></i><small class="text-gray count-items-in-cart"></small></a>
                         </li>
                         <li>
-                            <a href="BookStore.html" class="nav-link">BookStore</a>
+                            <a class="wish-toggle list-Desires" href="#"> <i class="far fa-heart"></i><small class="text-gray count-wish-items" id="list-Desires"></small></a>
                         </li>
                         <li>
-                            <a href="Reviews.html" class="nav-link">Reviews</a>
-                        </li>
-                        <li>
-                            <a href="Contacts.html" class="nav-link">Contacts</a>
+                            <a class="" href="#login"> <i class="fas fa-user-alt text-gray"></i></a>
                         </li>
                     </ul>
-                </div>                
-                <ul class="navbar-tool effect-ease">
-                    <li>
-                        <a class="sidebar-toggle" href="#"> <i class="fas fa-dolly-flatbed text-gray"></i><small class="text-gray count-items-in-cart"></small></a>
-                    </li>
-                    <li>
-                        <a class="wish-toggle" href="#"> <i class="far fa-heart"></i><small class="text-gray count-wish-items" id="list-Desires"></small></a>
-                    </li>
-                    <li>
-                        <a class="" href="#login"> <i class="fas fa-user-alt text-gray"></i></a>
-                    </li>
-                </ul>
-                <label for="hamburger">
-                    <i class="nav-toggle fas fa-bars"></i>
-                </label>                
-            </div>
-          </nav>
-    </header>
+                    <label for="hamburger">
+                        <i class="nav-toggle fas fa-bars"></i>
+                    </label>                
+                </div>
+              </nav>
+        </header>
         <!-- aside -->
         <aside class="sidebar">
             <div class="sidebar-header">
@@ -86,7 +88,7 @@
                 <h3>your total : <span class="wish-total">0</span></h3>
                 <button class="wish-clear">Clear All</button> 
             </div> 
-        </aside>
+        </aside>    
         <!-- slider -->   
         <div class="container color">
         <!-- HERO SECTION--> 
@@ -106,7 +108,6 @@
         <!-- showcase -->
             <section class="py-5">
             <div class="row">
-                <!-- sidebar -->
                 <div class="col-lg-3">
                     <h4 class="text-uppercase mb-4">BROWSE BOOK CATEGORIES</h4>
                     <div class="py-2 px-4 bg-dark text-white mb-3">
@@ -150,8 +151,8 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-lg-4 col-sm-6">
+                    <div class="row showcase">
+                        <div class="col-lg-4 col-sm-6"> 
                             <div class="product text-center">
                                 <div class="position-relative mb-3">
                                     <a class="d-block" href="#"><img src="./book images/38.jpg" class="img-fluid w-100" alt="popular"></a>                       
@@ -169,7 +170,7 @@
                                 &#8372<span class="small text-muted product-price">333</span>
                                 </section>
                             </div>
-                        </div>
+                        </div> 
                         <div class="col-lg-4 col-sm-6">
                             <div class="product text-center">
                                 <div class="position-relative mb-3">
@@ -207,9 +208,9 @@
                                 &#8372<span class="small text-muted product-price">799</span>
                                 </section>
                             </div>
-                        </div>
+                        </div> 
                     </div>
-                    <div class="row">
+                    <div class="row showcase">
                         <div class="col-lg-4 col-sm-6">
                             <div class="product text-center">
                                 <div class="position-relative mb-3">
@@ -266,7 +267,7 @@
                             &#8372<span class="small text-muted product-price">670</span>
                             </section>
                             </div>
-                        </div>
+                        </div> 
                     </div>
                 </div>
             </div>                   
@@ -320,44 +321,6 @@
             </div>
         </div>
     </footer> 
-    <!-- template cartItem -->
-    <template id="cartItem">
-        <div class="cart-item">
-            <div class="picture product-img">
-                <img src="./book images/21.jpg" alt="book 20" class="img-fluid w=100">
-            </div>
-            <div class="product-name">Clifford Simak</div>
-            <div class="remove-btn text-right">
-            <a href="#" class="reset-anchor m-auto"><i class="fas fa-trash-alt"></i></a>
-            </div>
-            <div class="quantity">
-                <div class="border d-flex justify-content-around mx-auto">
-                    <i class="fas fa-caret-left"></i>
-                        <span class="border-1 p-1 amount">1</span>
-                    <i class="fas fa-caret-right"></i>
-                </div>
-            </div>
-            <div class="prices">
-                <span class="price">&#8372 <spa class="product-price">177</spa></span> 
-                <span class="subtotal"><spa class="product-subtotal"></spa></span>
-            </div>
-        </div>  
-    </template>
-    <!-- template  -->
-    <template id="wishItem">
-        <div class="wish-item">
-            <div class="picture product-img">
-                <img src="./book images/22.jpg" alt="book 22" class="img-fluid w=100">
-            </div>
-            <div class="product-name">Stephen King</div>
-            <div class="add-btn text-right">            
-                <a href="#" class="reset-anchor m-auto"><i class="fas fa-cart-plus"></i></a>
-            </div>
-            <div class="prices">
-                <span class="price">&#8372 <spa class="product-price">149</spa></span> 
-            </div>
-        </div> 
-    </template>        
     <!-- login -->
     <div id="login" class="modal">
         <div class="dialog"> 
@@ -404,6 +367,7 @@
             </form> 
         </div>
     </div>
+    <!-- <script src="js/data.js"></script>  -->
     <script src="js/app.js"></script>      
     </body>
 </html>  

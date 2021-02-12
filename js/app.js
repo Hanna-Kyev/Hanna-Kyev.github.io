@@ -39,7 +39,8 @@ class Product {
             const name = item.name;
             const price = item.price;
             const image = item.image;
-            return {id, name, price, image};
+            const category = item.category;
+            return {id, name, price, image, category};
         });
     }
 };
@@ -77,7 +78,7 @@ class App {
             document.querySelector('.over').classList.remove('active');
         });
 
-        if (document.querySelector('.categories-collections')){
+        if (document.querySelector('.collections')){
             this.makeCategories(categories);
         };
 
@@ -85,9 +86,7 @@ class App {
         Storage.saveProducts(data.getProducts(products));
         this.makeShowcase(Storage.getProducts());
         this.cart = Storage.getCart();        
-        // console.log(this.cart);
         this.listDesires = Storage.getWish();
-        //  console.log(this.listDesires);
     };
 
     getProduct = id => products.find(product => product.id === +(id));
@@ -177,7 +176,6 @@ class App {
         <a class="category-item" data-category="${category.name}" href="#"><img class="img-fluid" src="${category.image}" alt="Thriller"><strong class="category-item-title category-item" data-category="${category.name}">${category.name}</strong></a> 
         `;
     };
-
     
     makeCategories(categories){
         for (let i=0;i<4;i++){
@@ -192,8 +190,24 @@ class App {
            } else if(i==3){
             div.innerHTML=this.createCategory(categories[i]);
            }
-           document.querySelector('.categories-collections').append(div);
+           document.querySelector('.categories').append(div);
         }
+    };
+
+    renderCategory(){
+        const categories = document.querySelector('.categories');               
+        categories.addEventListener('click',(event)=>{
+            const target = event.target;       
+            if (target.classList.contains('category-item')){
+                const category = target.dataset.category; 
+                const categoryFilter = items => items.filter(item => item.category.includes(category));
+                this.makeShowcase(categoryFilter(Storage.getProducts()));
+            } else{
+                this.makeShowcase(Storage.getProducts());
+            }
+            this.addProductToCart();
+            this.renderCart();
+        });
     };
     
     createWish(item){
@@ -364,5 +378,6 @@ class App {
     app.renderCart();
     app.renderWish();
     app.renderDesires();
+    app.renderCategory();
 })();
 

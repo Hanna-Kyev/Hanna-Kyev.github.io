@@ -77,6 +77,10 @@ class App {
             document.querySelector('.over').classList.remove('active');
         });
 
+        if (document.querySelector('.categories-collections')){
+            this.makeCategories(categories);
+        };
+
         let data = new Product();
         Storage.saveProducts(data.getProducts(products));
         this.makeShowcase(Storage.getProducts());
@@ -144,7 +148,7 @@ class App {
     createCartItem(item){
         const div = document.createElement('div');
         div.className = "cart-item";
-        div.setAttribute('id', item.id);
+        div.setAttribute('id', 'id'+item.id);
         div.innerHTML = `
             <div class="picture product-img">
                 <img src="${item.image}" alt="${item.name}" class="img-fluid w=100">
@@ -166,6 +170,30 @@ class App {
             </div>             
         `;
         this.cartItems.append(div);
+    };
+
+    createCategory(category){
+        return `
+        <a class="category-item" data-category="${category.name}" href="#"><img class="img-fluid" src="${category.image}" alt="Thriller"><strong class="category-item-title category-item" data-category="${category.name}">${category.name}</strong></a> 
+        `;
+    };
+
+    
+    makeCategories(categories){
+        for (let i=0;i<4;i++){
+            let div = document.createElement('div');
+            div.className="col-xl-3";
+           if (i==0){
+               div.innerHTML=this.createCategory(categories[i]);
+           } else if(i==1){
+            div.innerHTML=this.createCategory(categories[i]);
+           } else if(i==2){
+            div.innerHTML=this.createCategory(categories[i]);
+           } else if(i==3){
+            div.innerHTML=this.createCategory(categories[i]);
+           }
+           document.querySelector('.categories-collections').append(div);
+        }
     };
     
     createWish(item){
@@ -295,18 +323,10 @@ class App {
             item.querySelector('.product-subtotal').textContent = quantity*price;
             };
 
-        let tmpTotal = 0;
-        let itemsTotal = 0;
-        cart.map(item =>{
-            tmpTotal += item.price*item.amount;
-            itemsTotal += item.amount;
-        });
-        
-        this.cartTotal.textContent = parseFloat(tmpTotal.toFixed(2));
-        this.countItemsInCart.textContent = itemsTotal;
-
+        this.cartTotal.textContent = parseFloat(cart.reduce((previous, current) => previous + current.price*current.amount, 0).toFixed(2));
+        this.countItemsInCart.textContent = cart.reduce((previous, current) => previous + current.amount, 0);   
     };
-    
+   
     renderWish(){
     this.wishClear.addEventListener('click', () => this.clearWish());
 

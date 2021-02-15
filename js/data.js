@@ -128,7 +128,7 @@ const products = [
     {
         id: 19,
         image:"./book images/14.jpg",
-        name: "Ukrainian Dictionary",
+        name: "Uk Dictionary",
         price: 170,
         category:"Education"
     },

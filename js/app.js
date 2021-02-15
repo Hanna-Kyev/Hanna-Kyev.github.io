@@ -126,7 +126,7 @@ class App {
                         <div class="product-overlay">
                             <ul class="mb-0 list-inline">
                                 <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-outline-dark choose" href="#"><i class="fab fa-gratipay"></i></a></li>
-                                <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-dark add-to-cart" href="#">Buy book</a></li>
+                                <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-dark add-to-cart" href="#"><i class="fas fa-cart-plus"></i></a></li>
                                 <li class="list-inline-item mr-0"><a class="btn btn-sm btn-outline-dark" href="#"><i class="fas fa-book-reader"></i></a></li>
                             </ul>
                         </div>
@@ -208,7 +208,7 @@ class App {
             this.addProductToCart();
             this.renderCart();
         });
-    };
+    };    
     
     createWish(item){
     const div = document.createElement('div');
@@ -235,7 +235,6 @@ class App {
     addToCartButtons.forEach(button => {
         button.addEventListener('click',event => {
             let product = this.getProduct(event.target.closest('.product').getAttribute('data-id'));
-
             let exist = this.cart.some(elem=>elem.id===product.id);
             if(exist){
                 this.cart.forEach(elem=>{
@@ -253,10 +252,9 @@ class App {
                 } else{
                     this.countItemsInCart.classList.remove('notempty');
                 }               
-            }
-           
+            }           
             Storage.saveCart(this.cart);
-            this.setCartTotal(this.cart);
+            // this.setCartTotal(this.cart);
             });
         });
     };
@@ -280,14 +278,16 @@ class App {
             });
         });
     };
-        
-    clearAll(){
+
+    clear() {
         this.cart = [];
-        while(this.cartItems.children.length>0){
+        while (this.cartItems.children.length > 0) {
             this.cartItems.removeChild(this.cartItems.children[0]);
-        };
+        }
+        
         this.setCartTotal(this.cart);
-    };
+        Storage.saveCart(this.cart);
+    }
     
     clearWish(){
         this.listDesires = [];
@@ -296,36 +296,39 @@ class App {
         }
     };
 
-    renderCart(){
-    this.clearCart.addEventListener('click', () => this.clearAll());
-    this.cartItems.addEventListener('click', (event) => {
-        if(event.target.classList.contains('fa-trash-alt')){
-            this.cart = this.filterItem(this.cart, event.target);
-            this.cartItems.removeChild(event.target.parentElement.parentElement.parentElement);
-            Storage.saveCart(this.cart);
-            this.setCartTotal(this.cart);
+    renderCart() {
 
-        } else if (event.target.classList.contains('fa-caret-right')){
-            let tmp = this.findItem(this.cart, event.target);
-            tmp.amount = tmp.amount +1;
-            event.target.previousElementSibling.innerText = tmp.amount;
-            Storage.saveCart(this.cart);
-            this.setCartTotal(this.cart);
-        
-        } else if (event.target.classList.contains('fa-caret-left')){
-            let tmp = this.findItem(this.cart, event.target);
-            tmp.amount = tmp.amount -1;
-            if (tmp.amount >0){
-                event.target.nextElementSibling.innerText = tmp.amount;
-            } else {
+        this.clearCart.addEventListener("click", ()=>this.clear());        
+        this.cartItems.addEventListener("click", event=>{
+            // event.preventDefault();
+            if (event.target.classList.contains("fa-trash-alt")){
                 this.cart = this.filterItem(this.cart, event.target);
-                this.cartItems.removeChild(event.target.parentElement.parentElement.parentElement);
-            }            
-            this.setCartTotal(this.cart);
-            Storage.saveCart(this.cart);    
+                event.target.closest('.cart-item').remove();
+                this.setCartTotal(this.cart);
+                Storage.saveCart(this.cart);
+                
+            } else if (event.target.classList.contains("fa-caret-right")) {
+                let tempItem = this.findItem(this.cart, event.target);
+                tempItem.amount = tempItem.amount + 1;
+                
+                this.setCartTotal(this.cart);
+                Storage.saveCart(this.cart);
+                event.target.previousElementSibling.innerText = tempItem.amount;
+            } else if (event.target.classList.contains("fa-caret-left")) {
+                let tempItem = this.findItem(this.cart, event.target);
+                if (tempItem !== undefined && tempItem.amount > 1) {
+                    tempItem.amount = tempItem.amount - 1;
+                    event.target.nextElementSibling.innerText = tempItem.amount;
+                } else {
+                    this.cart = this.filterItem(this.cart, event.target);
+                    event.target.closest('.cart-item').remove();
+                }
+                
+                this.setCartTotal(this.cart);
+                Storage.saveCart(this.cart);
             }
-        })
-    };
+        });
+    }
 
     setCartTotal(cart){
         
@@ -371,8 +374,64 @@ class App {
 
 };
 
+function categoriesList(categories){
+    let result = '';
+    categories.forEach(element => {        
+        result += `<li class="mb-2"><a class="reset-anchor category-item" href="#" data-category="${element.name}">${element.name}</a></li>`;
+    });
+    document.querySelector('.categories-list').innerHTML = result;
+};
+
 (function(){
     const app = new App();
+
+    if(document.querySelector('.categories-list')){
+        categoriesList(categories);
+    };
+
+    if(document.querySelector('.selectpicker')){
+        let selectpicker = document.querySelector('.selectpicker')
+        selectpicker.addEventListener('change', function(){
+            console.log(this.value);
+
+            function compareValue(key, order = 'asc'){
+                return function innerSort(a, b){
+                    if(!a.hasOwnProperty(key) || !b.hasOwnProperty(key)){
+                        return 0;
+                    }
+
+                    const varA = (typeof a[key] === 'string') ? a[key].toUpperCase():a[key];
+                    const varB = (typeof b[key] === 'string') ? b[key].toUpperCase():b[key];
+
+                    let comparison = 0;
+
+                    if(varA > varB){
+                        comparison = 1;
+                    } else if(varA < varB){
+                        comparison = -1;
+                    }
+                    return ((order === "desc")? (comparison * -1): comparison);
+                }
+            }
+
+            switch (this.value) {
+                case 'low-high':
+                    app.makeShowcase(Storage.getProducts().sort(compareValue('price', 'asc')));
+                    break;
+                case 'high-low':
+                    app.makeShowcase(Storage.getProducts().sort(compareValue('price', 'desc')));
+                    break;
+                case 'popularity':
+                    app.makeShowcase(Storage.getProducts().sort(compareValue('id', 'desc')));
+                    break;                   
+                default:
+                    app.makeShowcase(Storage.getProducts().sort(compareValue('price', 'asc')));
+                    break;
+            }
+            app.addProductToCart();
+            app.renderCart();
+        });
+    }
     app.addProductToCart()
     app.productChoose();
     app.renderCart();

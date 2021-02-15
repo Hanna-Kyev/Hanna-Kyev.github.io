@@ -108,17 +108,12 @@
         <!-- showcase -->
             <section class="py-5">
             <div class="row">
-                <div class="col-lg-3">
+                <div class="col-lg-3 categories">
                     <h4 class="text-uppercase mb-4">BROWSE BOOK CATEGORIES</h4>
                     <div class="py-2 px-4 bg-dark text-white mb-3">
                         <strong class="small text-uppercase">Classic</strong>
                     </div>
-                    <ul class="list-unstyled  small pl-4">
-                        <li class="mb-2"><a class="reset-anchor" href="#">Ukrainian classics</a></li>
-                        <li class="mb-2"><a class="reset-anchor" href="#">English classics</a></li>
-                        <li class="mb-2"><a class="reset-anchor" href="#">Russian classics</a></li>
-                        <li class="mb-2"><a class="reset-anchor" href="#">French classics</a></li>
-                    </ul>
+                    <ul class="categories-list list-unstyled  small pl-4"></ul>
                     <div class="py-2 px-4 bg-dark text-white mb-3">
                         <strong class="small text-uppercase">POPULAR</strong>
                     </div>
@@ -142,17 +137,25 @@
                 <div class="col-lg-9 mb-5">
                     <div class="row mb-3 align-items-center">
                         <div class="col-lg-6 mb-2">
-                            <p class="text-muted mb-0">Show 1 - 6 of 54 results</p>
+                            <p class="text-muted mb-0">Show 20 of 100 results</p>
                         </div>
                         <div class="col-lg-6">
                             <ul class="list-inline d-flex align-items-center justify-content-end mb-0">
                                 <li class="list-inline-item mr-3"><a class="reset-anhor p-0" href="#"><i class="fas fa-th-large"></i></a></li>
                                 <li class="list-inline-item mr-3"><a class="reset-anhor p-0" href="#"><i class="fas fa-th"></i></a></li>
+                                <li class="list-inline-item">
+                                    <select name="sorting" id="" class="selectpicker ml-auto" data-width="200" data-style="bs-select-form-control" data-title="Default sorting">
+                                        <option value="default">Default sorting</option>
+                                        <option value="popularity">Popularity</option>
+                                        <option value="low-high">Low To High</option>
+                                        <option value="high-low">High To Low</option>
+                                    </select>
+                                </li>
                             </ul>
                         </div>
                     </div>
                     <div class="row showcase">
-                        <div class="col-lg-4 col-sm-6"> 
+                        <!-- <div class="col-lg-4 col-sm-6"> 
                             <div class="product text-center">
                                 <div class="position-relative mb-3">
                                     <a class="d-block" href="#"><img src="./book images/38.jpg" class="img-fluid w-100" alt="popular"></a>                       
@@ -208,10 +211,10 @@
                                 &#8372<span class="small text-muted product-price">799</span>
                                 </section>
                             </div>
-                        </div> 
+                        </div>  -->
                     </div>
                     <div class="row showcase">
-                        <div class="col-lg-4 col-sm-6">
+                        <!-- <div class="col-lg-4 col-sm-6">
                             <div class="product text-center">
                                 <div class="position-relative mb-3">
                                     <a class="d-block" href="#"><img src="./book images/19.jpg" class="img-fluid w-100" alt="sf"></a>
@@ -267,7 +270,7 @@
                             &#8372<span class="small text-muted product-price">670</span>
                             </section>
                             </div>
-                        </div> 
+                        </div>  -->
                     </div>
                 </div>
             </div>                   
@@ -367,7 +370,7 @@
             </form> 
         </div>
     </div>
-    <!-- <script src="js/data.js"></script>  -->
+    <script src="js/data.js"></script> 
     <script src="js/app.js"></script>      
     </body>
 </html>  

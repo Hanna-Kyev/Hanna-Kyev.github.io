@@ -19,7 +19,7 @@ body {
     line-height: 1.5;
     font-size: 0.875rem;
     font-weight: 400;
-    background-image: url('/book images/FUWP6794.JPG');
+    background-image: url('E:/Project/book images/FUWP6794.JPG');
     background-repeat: repeat;
     background-position: center;
     background-attachment: fixed;
@@ -248,7 +248,7 @@ button.bg-dark:focus {
 
 .hero{
     min-height: 25em;
-    background-image: url('/book images/36.jpg');
+    background-image: url('E:/Project/book images/36.jpg');
     background-size: cover;
 }
 

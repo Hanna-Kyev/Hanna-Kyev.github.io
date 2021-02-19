@@ -5,6 +5,14 @@ class Storage {
         localStorage.setItem('products', JSON.stringify(products));
     }
 
+    static saveStorageItem(key, item) {
+        localStorage.setItem(key, JSON.stringify(item));
+    }
+
+    static saveCategories(categories) {
+        localStorage.setItem("categories", JSON.stringify(categories));
+    }
+
     static saveCart(cart){
         localStorage.setItem('basket', JSON.stringify(cart));
     }
@@ -27,13 +35,16 @@ class Storage {
     }
 
     static getProducts(){
-        return JSON.parse(localStorage.getItem('products'));
-        
+        return JSON.parse(localStorage.getItem('products'));        
+    }
+
+    static getCategories() {
+        return JSON.parse(localStorage.getItem("categories"));
     }
 };
 
 class Product {
-    getProducts(products){
+    makeModel(products){
         return products.map(item =>{
             const id = item.id;
             const name = item.name;
@@ -44,6 +55,17 @@ class Product {
         });
     }
 };
+
+class Category {
+    makeModel(categories) {
+        return categories.map(item => {
+            const id = item.id;
+            const name = item.name;
+            const image = item.image;
+            return {id, name,image};
+        });
+    }
+}
 
 class App {
     cart = [];
@@ -77,19 +99,12 @@ class App {
             wish.classList.toggle('show-wish');
             document.querySelector('.over').classList.remove('active');
         });
-
-        if (document.querySelector('.collections')){
-            this.makeCategories(categories);
-        };
-
-        let data = new Product();
-        Storage.saveProducts(data.getProducts(products));
-        this.makeShowcase(Storage.getProducts());
+        
         this.cart = Storage.getCart();        
         this.listDesires = Storage.getWish();
     };
-
-    getProduct = id => products.find(product => product.id === +(id));
+    
+    getProduct = (id) => Storage.getProducts().find(product => product.id === +(id));
 
     filterItem = (cart, filteredItem) => cart.filter(item => item.id !== +(filteredItem.dataset.id));
     findItem = (cart, findingItem) => cart.find(item => item.id === + (findingItem.dataset.id));
@@ -372,6 +387,22 @@ class App {
         });
     };
 
+    fetchData(dataBase, model){
+        const baseUrl = `https://my-json-server.typicode.com/Hanna-Kyev/Data_Project/${dataBase}`;
+
+        fetch(baseUrl)
+        .then(response => {
+            if(response.status !== 200){
+                console.error(`Looks like there was a problem. Status code: ${response.status}`);
+                return;
+            }
+            response.json().then(dataJson => {                
+                Storage.saveStorageItem(dataBase, model.makeModel(dataJson));               
+            })
+        })
+        .catch(err => console.error('Fetch Error : -S', err));
+    }
+
 };
 
 function categoriesList(categories){
@@ -382,38 +413,51 @@ function categoriesList(categories){
     document.querySelector('.categories-list').innerHTML = result;
 };
 
+function compareValue(key, order = 'asc'){
+    return function innerSort(a, b){
+        if(!a.hasOwnProperty(key) || !b.hasOwnProperty(key)){
+            return 0;
+        }
+
+        const varA = (typeof a[key] === 'string') ? a[key].toUpperCase():a[key];
+        const varB = (typeof b[key] === 'string') ? b[key].toUpperCase():b[key];
+
+        let comparison = 0;
+
+        if(varA > varB){
+            comparison = 1;
+        } else if(varA < varB){
+            comparison = -1;
+        }
+        return ((order === "desc")? (comparison * -1): comparison);
+    }
+};
+
 (function(){
     const app = new App();
 
+    if (document.querySelector('.collections')){
+        app.fetchData("categories", new Category());
+        app.makeCategories(Storage.getCategories());        
+    };
+    app.fetchData("products", new Product());
+
+    app.makeShowcase(Storage.getProducts());
+    app.addProductToCart()
+    app.productChoose();
+    app.renderCart();
+    app.renderWish();
+    app.renderDesires();
+    app.renderCategory();
+
     if(document.querySelector('.categories-list')){
-        categoriesList(categories);
+        categoriesList(Storage.getCategories());
     };
 
     if(document.querySelector('.selectpicker')){
         let selectpicker = document.querySelector('.selectpicker')
         selectpicker.addEventListener('change', function(){
-            console.log(this.value);
-
-            function compareValue(key, order = 'asc'){
-                return function innerSort(a, b){
-                    if(!a.hasOwnProperty(key) || !b.hasOwnProperty(key)){
-                        return 0;
-                    }
-
-                    const varA = (typeof a[key] === 'string') ? a[key].toUpperCase():a[key];
-                    const varB = (typeof b[key] === 'string') ? b[key].toUpperCase():b[key];
-
-                    let comparison = 0;
-
-                    if(varA > varB){
-                        comparison = 1;
-                    } else if(varA < varB){
-                        comparison = -1;
-                    }
-                    return ((order === "desc")? (comparison * -1): comparison);
-                }
-            }
-
+            // console.log(this.value);
             switch (this.value) {
                 case 'low-high':
                     app.makeShowcase(Storage.getProducts().sort(compareValue('price', 'asc')));
@@ -432,11 +476,6 @@ function categoriesList(categories){
             app.renderCart();
         });
     }
-    app.addProductToCart()
-    app.productChoose();
-    app.renderCart();
-    app.renderWish();
-    app.renderDesires();
-    app.renderCategory();
+    
 })();
 
